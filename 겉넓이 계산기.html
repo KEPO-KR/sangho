@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>겉넓이</title>
+  </head>
+  <body>
+    <input type="text" placeholder="가로" id="s1"/>
+    <input type="text" placeholder="세로" id="s2"/>
+    <input type="text" placeholder="높이" id="s3"/>
+    <input type="button" value="완료" onclick="ss()"/>
+    <p id="s"> </p>
+    <script type="text/javascript">
+    function ss() {
+      var on = document.getElementById("s1").value;
+      var to = document.getElementById("s2").value;
+      var so = document.getElementById("s3").value;
+      var ots = (on * to * 2) + (on * so * 2) + (to * so * 2) + "㎠";
+      s.innerHTML = (ots);
+    }
+    </script>
+  </body>
+</html>

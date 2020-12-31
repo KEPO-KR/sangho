@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>soda</title>
+    <style media="screen">
+    h1{
+      padding: 0;
+      margin: 0;}
+
+    input[type="button"]{
+      outline-color: #cfffe5;
+      background-color: #8ebebc;
+      color: #fff;
+      width: 100%;
+    }
+    input[type="text"]{
+      width: 98%;
+    }
+
+    body{
+      padding: 0;
+      margin: 0;
+    }
+      .soda{
+        width:50%;
+        background-color: #818181;
+        height: 100%;
+      }
+      .bg{
+        background-color: grey;
+      }
+
+      .ge{
+        width: 100%;
+        height: 20px;
+      }
+        table, th, td {
+
+        border: 1px solid black;
+
+    }
+    table {
+
+      border-collapse: collapse;
+
+  }
+    </style>
+  </head>
+  <body>
+  <div class="soda">
+    <h1>SoDa 도형계산</h1>
+    계산기
+  <div class="bg">
+  원주 계산기
+  <br/>
+  <input type="text" placeholder="원주율" id="onj1"/>
+  <input type="text" placeholder="지름" id="onj2"/>
+  <br/>
+  넓이 계산기
+  <br/>
+  <input type="text" placeholder="가로 또는 원주율" id="sg1"/>
+  <input type="text" placeholder="세로 또는 반지름" id="sg2"/>
+  <br/>
+  부피 계산기
+  <br/>
+  <input type="text" placeholder="가로 또는 원주율" id="sg3"/>
+  <input type="text" placeholder="세로 또는 반지름" id="sg4"/>
+  <input type="text" placeholder="높이" id="sg5"/>
+  <br/>
+  <strong>부피 메뉴</strong>
+  <input type="button" onclick="cc4()" value="정육면체/부피"/>
+  <input type="button" onclick="cc5()" value="원기둥/부피"/>
+  <input type="button" onclick="cc7()" value="구/부피"/>
+  <strong>넓이 메뉴</strong>
+  <input type="button" onclick="cc()" value="사각형/넓이"/>
+  <input type="button" onclick="cc2()" value="원/넓이"/>
+  <strong>별도 메뉴</strong>
+  <input type="button" onclick="onj()" value="원주계산/길이"/>
+  <input type="button" onclick="cc3()" value="초기화"/>
+  <a href="겉넓이 계산기.html"><input type="button" value="겉넓이"/></a>
+  </div>
+  <table class="ge">
+    <tr>
+      <td id="ss"></td>
+      <td id="s2"></td>
+      <td id="s3"></td>
+    </tr>
+  </table>
+  <script type="text/javascript">
+    function cc() {
+    var on = document.getElementById("sg1").value;
+    var to = document.getElementById("sg2").value;
+    var ot = (on * to) + "㎠";
+    ss.innerHTML = (ot);
+    }
+    function cc2() {
+      var on = document.getElementById("sg1").value;
+      var to = document.getElementById("sg2").value;
+      var ot = "약" + (to * to * on) + "㎠";
+      ss.innerHTML = (ot);
+    }
+    function cc4() {
+      var on = document.getElementById("sg3").value;
+      var to = document.getElementById("sg4").value;
+      var tr = document.getElementById("sg5").value;
+      var ot = (to * tr * on) + "㎤";
+      s2.innerHTML = (ot);
+    }
+    function cc5() {
+      var on = document.getElementById("sg3").value;
+      var to = document.getElementById("sg4").value;
+      var tr = document.getElementById("sg5").value;
+      var ot = "약" + (to * to * on * tr) + "㎤";
+      s2.innerHTML = (ot);
+    }
+    function cc7() {
+
+      var on = document.getElementById("sg3").value;
+      var to = document.getElementById("sg4").value;
+      var tr = document.getElementById("sg5").value;
+      var ot = "약" + (to * to * on * tr)/3 *2 + "㎤";
+      s2.innerHTML = (ot);
+    }
+  function cc3() {
+    s2.innerHTML = ("부피 계산결과");
+    ss.innerHTML = ("넓이 계산결과");
+    s3.innerHTML = ("원주 계산결과");
+  }
+  function onj() {
+    var on = document.getElementById("onj1").value;
+    var to = document.getElementById("onj2").value;
+    var ot = "약" + (on * to)+ "㎝";
+    s3.innerHTML = (ot);
+  }
+  </script>
+</div>
+  </body>
+</html>
