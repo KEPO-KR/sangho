@@ -57,17 +57,16 @@
     </style>
   </head>
   <body>
-    <form action="index.html">
     <div class="sod2">
     <table class="soda">
       <tr>
-        <td><input type="text" id="soda"></td>
+        <td><input type="text" id="soda" onkeyup="enterkey()"></td>
       </tr>
     </table>
     <table>
       <tr>
         <td class="ss"><input type="button" value="Ac" onclick="Ac()"></td>
-        <td class="s"><input type="submit" value="도형계산"></td>
+        <td class="s"><a href="index.html"><input type="button" value="도형계산"></a></td>
       </tr>
     </table>
     <table class="hi">
@@ -156,6 +155,12 @@
       }
       function Ac() {
         document.getElementById("soda").value = "0";
+      }
+      function enterkey() {
+        if (window.event.keyCode == 13) {
+          var ha = eval(soda.value);
+          document.getElementById("soda").value = ha;
+           }
       }
     </script>
   </form>
