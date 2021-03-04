@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>sangho-제곱</title>
+    <style media="screen">
+      input[type="text"]{
+        display: block;
+        width: 592px;
+        height: 70px;
+        font-size: 50px;
+      }
+      input[type="button"]{
+        display: block;
+        width: 600px;
+        height: 70px;
+        font-size: 50px;
+        border-color: skyblue;
+        background-color: skyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" id="mit" placeholder="밑">
+    <input type="text" id="jisu" placeholder="지수">
+    <input type="button" value="완료" onclick="ja()">
+    <script>
+    function ja() {
+      var m = document.getElementById('mit').value;
+      var j = document.getElementById('jisu').value;
+      document.write(m ** j);
+    }
+    </script>
+  </body>
+</html>
