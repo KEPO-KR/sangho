@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Vip</title>
+    <style>
+      input[type="number"]{
+        width: 593px;
+        height: 100px;
+        font-size: 30px;
+        background-color:skyblue;
+      }
+      input[type="button"]{
+        width: 600px;
+        font-size: 30px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h2>약수</h2>
+    <input type="number" id="sh" placeholder="약수를 알아볼 수를 적으세요.한도 1천만">
+    <input type="button" onclick="sdh()" value="완료">
+    </div>
+    <div>
+      <h2>배수</h2>
+      <input type="number" id="be" placeholder="배수를 알아볼 수를 적으세요 (최대 50배)">
+      <input type="button" onclick="sah()" value="완료">
+    </div>
+    <br>
+    Copyright 2021. sangho All Source code.
+    <br>
+    이 페이지의 모든 소스코드 저작권은 황상호에게 있습니다
+    <script>
+    function sah() {
+      var sh = document.getElementById('be').value;
+      var i = 1;
+      while (i <= 51) {
+        document.write(sh * i + "<br>");
+        i = i + 1;
+      }
+      document.write("Copyright 2021. sangho All Source code.이 페이지의 모든 소스코드 저작권은 황상호에게 있습니다");
+    }
+    function sdh() {
+      var s = 0;
+      var j = document.getElementById('sh').value;
+      var i = 0;
+      var so = 0;
+      if (j == "") {
+        alert("값을 입력해주세요");
+      } else {
+      while (i < j+1) {
+        if ((j % i) == 0) {
+          so = so + 1;
+         document.write("<p>"+i+"</p>");
+        }
+        if (j > 10000001) {
+          i = j;
+          alert("수가 너무 큽니다");
+        }
+        i = i + 1;
+      }
+      if (so == 2) {
+        document.write("소수입니다<br>");
+      } else if (so >= 3) {
+        document.write("합성수입니다<br>");
+      } else if (j == 1) {
+        document.write("1은 소수와 합성수로 나눌수 없습니다!<br>")
+      } else {
+        document.write("해당사항 없음<br>");
+      }
+      document.write("Copyright 2021. sangho All Source code.이 페이지의 모든 소스코드 저작권은 황상호에게 있습니다");
+    }
+  }
+    </script>
+  </body>
+</html>
